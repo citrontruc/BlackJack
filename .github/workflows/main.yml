@@ -56,8 +56,8 @@ jobs:
       - name: Archive ${{ matrix.folder }} release
         run: |
           mkdir -p release/${{ matrix.folder }}
-          cp Game/bin/${{ matrix.configuration }}/net10.0/${{ matrix.rid }}/publish/${{ env.project_name }}${{ matrix.ext }} release/${{ matrix.folder }}/
-          cd release/${{ matrix.folder }} && zip -r ../${{ env.project_name }}-${{ matrix.folder }}-${{ github.ref_name }}-x64.zip .
+          cp Game/bin/${{ matrix.configuration }}/net10.0/${{ matrix.rid }}/publish/${{ env.PROJECT_NAME }}${{ matrix.ext }} release/${{ matrix.folder }}/
+          cd release/${{ matrix.folder }} && zip -r ../${{ env.PROJECT_NAME }}-${{ matrix.folder }}-${{ github.ref_name }}-x64.zip .
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -87,8 +87,8 @@ jobs:
           generate_release_notes: true
           # Les fichiers à uploader
           files: |
-            release/blackjack-builds-linux/${{ env.project_name }}-linux-${{ github.ref_name }}-x64.zip
-            release/blackjack-builds-windows/${{ env.project_name }}-windows-${{ github.ref_name }}-x64.zip
-            release/blackjack-builds-macos/${{ env.project_name }}-macos-${{ github.ref_name }}-x64.zip
+            release/blackjack-builds-linux/${{ env.PROJECT_NAME }}-linux-${{ github.ref_name }}-x64.zip
+            release/blackjack-builds-windows/${{ env.PROJECT_NAME }}-windows-${{ github.ref_name }}-x64.zip
+            release/blackjack-builds-macos/${{ env.PROJECT_NAME }}-macos-${{ github.ref_name }}-x64.zip
           overwrite_files: true
           make_latest: true
