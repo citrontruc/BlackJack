@@ -6,7 +6,12 @@ public class Wallet
 {
     public int MoneySum;
 
-    # region Constructor
+    # region Constructors
+    public Wallet()
+    {
+        MoneySum = 0;
+    }
+
     public Wallet(int initialSum)
     {
         MoneySum = initialSum;

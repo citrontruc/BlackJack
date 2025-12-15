@@ -1,0 +1,3 @@
+/*
+A class to retrieve all the inputs from all sources.
+*/
