@@ -35,4 +35,12 @@ public class Card
     public Values CardValue;
     public Colours CardColour;
     #endregion
+
+    #region Constructor
+    public Card(Values value, Colours colour)
+    {
+        CardValue = value;
+        CardColour = colour;
+    }
+    #endregion
 }

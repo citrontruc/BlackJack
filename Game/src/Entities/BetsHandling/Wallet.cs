@@ -19,13 +19,14 @@ public class Wallet
         MoneySum += value;
     }
 
-    public void DebitWallet(int value)
+    public Result DebitWallet(int value)
     {
         if (MoneySum - value < 0)
         {
-            throw new InvalidOperationException("You don't have enough money to credit wallet");
+            return Result.Failure(WalletErrors.NotEnoughMoney);
         }
         MoneySum -= value;
+        return Result.Success();
     }
     #endregion
 }
