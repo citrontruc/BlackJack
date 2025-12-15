@@ -1,0 +1,3 @@
+/*
+A class to translate user inputs in Game verbs.
+*/

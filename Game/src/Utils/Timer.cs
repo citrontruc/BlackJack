@@ -17,6 +17,7 @@ public class Timer
     /// </summary>
     private readonly bool _isLooping;
 
+    #region Constructors
     /// <summary>
     /// Creates a new Timer.
     /// </summary>
@@ -28,6 +29,7 @@ public class Timer
         _isLooping = isLooping;
         TimeElapsed = 0f;
     }
+    #endregion
 
     #region Setters & Getters
     /// <summary>
@@ -52,7 +54,6 @@ public class Timer
     {
         TimeElapsed = 0f;
     }
-
     #endregion
 
     #region Update timer values
@@ -75,7 +76,6 @@ public class Timer
     {
         TimeElapsed += deltaTime;
     }
-
     #endregion
 
     #region Checks on Timer values
@@ -95,6 +95,5 @@ public class Timer
         }
         return false;
     }
-
     #endregion
 }
