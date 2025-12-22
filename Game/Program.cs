@@ -6,6 +6,8 @@ public class Game
 {
     public static void Main()
     {
-        Console.WriteLine("HelloWorld!");
+        GameHandler game = new();
+        game.Initiliaze();
+        game.RunGame();
     }
 }
