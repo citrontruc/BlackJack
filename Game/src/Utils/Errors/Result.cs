@@ -2,7 +2,7 @@
 A class to implement the Result design pattern.
 */
 
-public class Result
+public record class Result
 {
     private Result(bool isSuccess, Error error)
     {
