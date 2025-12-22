@@ -2,7 +2,7 @@
 A representation of a card in a game of BlackJack.
 */
 
-public class Card
+public struct Card
 {
     #region Enums to define cards
     public enum Values

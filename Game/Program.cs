@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*
+A class to launch our game
+*/
+
+public class Game
+{
+    public static void Main()
+    {
+        Console.WriteLine("HelloWorld!");
+    }
+}

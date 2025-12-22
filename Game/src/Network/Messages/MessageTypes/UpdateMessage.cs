@@ -1,0 +1,3 @@
+/*
+An object to transmit to other players the last update of the game.
+*/

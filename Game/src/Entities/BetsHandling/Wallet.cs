@@ -2,7 +2,7 @@
 A wallet to represent a player's current money count.
 */
 
-public class Wallet
+public record class Wallet
 {
     public int MoneySum;
 

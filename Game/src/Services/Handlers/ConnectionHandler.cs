@@ -1,0 +1,3 @@
+/*
+A class to store all the connections to other players in order to check on them.
+*/

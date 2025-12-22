@@ -1,0 +1,3 @@
+/*
+An object to send a message to ask for a connection to the game.
+*/

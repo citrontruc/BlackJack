@@ -1,0 +1,3 @@
+/*
+An object to create a connection client to connect to the server.
+*/

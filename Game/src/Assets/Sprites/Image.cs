@@ -1,0 +1,3 @@
+/*
+An object to store a single image that can be shared with multiple objects.
+*/

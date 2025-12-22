@@ -1,0 +1,3 @@
+/*
+An object to store a client where other players can connect.
+*/

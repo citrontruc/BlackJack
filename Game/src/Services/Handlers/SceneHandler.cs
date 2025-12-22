@@ -1,0 +1,3 @@
+/*
+A class to handle transitions between scenes and notably that assets are loaded and unloaded.
+*/

@@ -1,0 +1,3 @@
+/*
+A Service to evaluate all blackjack hands.
+*/
