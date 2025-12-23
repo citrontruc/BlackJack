@@ -16,11 +16,50 @@
     "text": [
         {
             "value": "BlackJack",
+            "position": {
+                "x": 0,
+                "y": 0
+            },
             "size": {
                 "x": 0,
                 "y": 0
             },
-            "colour": "red"
+            "colour": "red",
+            "fontSize": 40
+        },
+        {
+            "value": "Play Game",
+            "position": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 0,
+                "y": 0
+            },
+            "colour": "white",
+            "fontSize": 20,
+            "onClick": {
+                "name": "ChangeScene",
+                "value": "Game"
+            }
+        },
+        {
+            "value": "Exit",
+            "position": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 0,
+                "y": 0
+            },
+            "colour": "white",
+            "fontSize": 20,
+            "onClick": {
+                "name": "Quit",
+                "value": "0"
+            }
         }
     ]
 }

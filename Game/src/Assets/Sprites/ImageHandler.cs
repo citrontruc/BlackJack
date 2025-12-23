@@ -19,11 +19,11 @@ public class ImageHandler
         {
             return GetImage(imageName);
         }
-        throw new FileLoadException($"Couldn't load file {imageName}");
+        throw new FileLoadException(imageLoad.ToString());
     }
 
     public Result LoadImage(string imageName)
     {
-        return Result.Failure(new Error("404", "Couldn't find asset."));
+        return Result.Failure(new Error("FileNotFound", $"Couldn't find asset: {imageName}."));
     }
 }
