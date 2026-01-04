@@ -2,7 +2,7 @@
 A test file to check the evaluation of hands.
 */
 
-public class UnitTest1
+public class HandEvaluationTest
 {
     [Fact]
     public void EvaluateHand_Valid_ReturnsScore()

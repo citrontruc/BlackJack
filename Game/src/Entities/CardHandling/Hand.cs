@@ -23,6 +23,16 @@ public class Hand
         return _cards;
     }
 
+    public List<Card.Values> GetCardValues()
+    {
+        List<Card.Values> cardValuesList = new();
+        foreach (Card card in _cards)
+        {
+            cardValuesList.Add(card.CardValue);
+        }
+        return cardValuesList;
+    }
+
     public void ResetHand()
     {
         _cards = [];
