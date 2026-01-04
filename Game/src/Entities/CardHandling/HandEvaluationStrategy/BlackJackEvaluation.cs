@@ -4,20 +4,21 @@ A strategy to evaluate a hand of blackjack.
 
 public class BlackJackEvaluationStrategy : HandEvaluationStrategy
 {
-    private readonly Dictionary<Card.Values, int[]> _cardValues = new() {
-        {Card.Values.Ace, [1, 11]},
-        {Card.Values.Two, [2]},
-        {Card.Values.Three, [3]},
-        {Card.Values.Four, [4]},
-        {Card.Values.Five, [5]},
-        {Card.Values.Six, [6]},
-        {Card.Values.Seven, [7]},
-        {Card.Values.Eight, [8]},
-        {Card.Values.Nine, [9]},
-        {Card.Values.Ten, [10]},
-        {Card.Values.Jack, [10]},
-        {Card.Values.Queen, [10]},
-        {Card.Values.King, [10]},
+    private readonly Dictionary<Card.Values, int[]> _cardValues = new()
+    {
+        { Card.Values.Ace, [1, 11] },
+        { Card.Values.Two, [2] },
+        { Card.Values.Three, [3] },
+        { Card.Values.Four, [4] },
+        { Card.Values.Five, [5] },
+        { Card.Values.Six, [6] },
+        { Card.Values.Seven, [7] },
+        { Card.Values.Eight, [8] },
+        { Card.Values.Nine, [9] },
+        { Card.Values.Ten, [10] },
+        { Card.Values.Jack, [10] },
+        { Card.Values.Queen, [10] },
+        { Card.Values.King, [10] },
     };
 
     public int Evaluate(List<Card> cards)
