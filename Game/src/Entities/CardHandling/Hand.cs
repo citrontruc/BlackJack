@@ -29,7 +29,7 @@ public class Hand
     }
     #endregion
 
-    public int GetHandValue()
+    public int EvaluateHandValue()
     {
         return _evaluationStrategy.Evaluate(_cards);
     }
