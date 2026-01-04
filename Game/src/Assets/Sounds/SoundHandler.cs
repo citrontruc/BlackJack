@@ -1,3 +1,3 @@
 /*
-A claass to handle all audio.
+A class to handle all audio.
 */
