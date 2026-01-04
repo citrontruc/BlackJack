@@ -1,0 +1,3 @@
+/*
+A class to write tests in order to check bets
+*/
