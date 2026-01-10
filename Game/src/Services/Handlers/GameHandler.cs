@@ -25,8 +25,8 @@ public class GameHandler : Singleton<GameHandler>
     /// </summary>
     private void InitializeWindow()
     {
-        Raylib.SetTargetFPS(_targetFPS);
         Raylib.InitWindow(_screenWidth, _screenHeight, "BlackJack");
+        Raylib.SetTargetFPS(_targetFPS);
     }
 
     /// <summary>
