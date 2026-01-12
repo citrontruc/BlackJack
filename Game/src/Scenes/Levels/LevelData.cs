@@ -1,0 +1,4 @@
+/*
+A class to define the elements in a level.
+Used to read and parse json elements.
+*/

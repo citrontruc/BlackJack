@@ -1,64 +1,64 @@
 {
-    "assets": [
+    "Assets": [
         {
-            "name": "AceHeart.jpeg",
-            "position": {
+            "Name": "AceHeart.jpeg",
+            "Position": {
                 "x": 0,
                 "y": 0
             },
-            "size": {
+            "Size": {
                 "x": 0,
                 "y": 0
             },
-            "angle": 0
+            "Angle": 0
         }
     ],
-    "text": [
+    "Text": [
         {
-            "value": "BlackJack",
-            "position": {
+            "Value": "BlackJack",
+            "Position": {
                 "x": 0,
                 "y": 0
             },
-            "size": {
+            "Size": {
                 "x": 0,
                 "y": 0
             },
-            "colour": "red",
-            "fontSize": 40
+            "Color": "red",
+            "FontSize": 40
         },
         {
-            "value": "Play Game",
-            "position": {
+            "Value": "Play Game",
+            "Position": {
                 "x": 0,
                 "y": 0
             },
-            "size": {
+            "Size": {
                 "x": 0,
                 "y": 0
             },
-            "colour": "white",
-            "fontSize": 20,
+            "Color": "white",
+            "FontSize": 20,
             "onClick": {
-                "name": "ChangeScene",
-                "value": "Game"
+                "Name": "ChangeScene",
+                "Value": "Game"
             }
         },
         {
-            "value": "Exit",
-            "position": {
+            "Value": "Exit",
+            "Position": {
                 "x": 0,
                 "y": 0
             },
-            "size": {
+            "Size": {
                 "x": 0,
                 "y": 0
             },
-            "colour": "white",
-            "fontSize": 20,
+            "Color": "white",
+            "FontSize": 20,
             "onClick": {
-                "name": "Quit",
-                "value": "0"
+                "Name": "Quit",
+                "Value": "0"
             }
         }
     ]
