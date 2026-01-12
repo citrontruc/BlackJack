@@ -7,12 +7,12 @@ public interface IScene
     /// <summary>
     /// Load any elements and assets for the scene.
     /// </summary>
-    public void Load();
+    public Result Load();
 
     /// <summary>
     /// Unload all the elements exclusive for the scene.
     /// </summary>
-    public void Unload();
+    public Result Unload();
 
     /// <summary>
     /// Update all the entities in the scene.
