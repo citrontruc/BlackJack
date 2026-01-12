@@ -2,18 +2,33 @@
 A class to represent the main menu of the game.
 */
 
+using MenuData;
 using Raylib_cs;
 
 public class Menu : IScene
 {
     #region Display information
-    protected static int _screenWidth = Raylib.GetScreenWidth();
-    protected static int _screenHeight = Raylib.GetScreenHeight();
+    private int _screenWidth = Raylib.GetScreenWidth();
+    private int _screenHeight = Raylib.GetScreenHeight();
     #endregion
+
+    private string _dataDirectory;
+    private JsonData? _jsonData;
+
+    public Menu(string dataDirectory)
+    {
+        _dataDirectory = dataDirectory;
+    }
+
+    public Result LoadJson(string jsonDirectory)
+    {
+        _jsonData = MenuDataLoader.LoadMenuData(jsonDirectory);
+        return Result.Success();
+    }
 
     public Result Load()
     {
-        return Result.Success();
+        return LoadJson(_dataDirectory);
     }
 
     public Result Unload()
