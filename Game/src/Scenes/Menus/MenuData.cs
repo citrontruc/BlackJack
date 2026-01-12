@@ -27,6 +27,7 @@ public record class TextData
     public required string Color { get; init; }
     public int FontSize { get; init; }
     public OnClickAction? onClick { get; init; }
+    public OnHoverAction? onHover { get; init; }
 }
 
 public record class ElementPosition
@@ -41,7 +42,13 @@ public record class ElementSize
     public int y { get; init; }
 }
 
-public record OnClickAction
+public record class OnClickAction
+{
+    public required string Name { get; init; }
+    public required string Value { get; init; }
+}
+
+public record class OnHoverAction
 {
     public required string Name { get; init; }
     public required string Value { get; init; }
