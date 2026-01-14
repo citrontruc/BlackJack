@@ -11,6 +11,7 @@ public class TestImage : IDisposable
         // Initialize once for the whole test class
         if (!Raylib.IsWindowReady())
         {
+            Raylib.SetConfigFlags(ConfigFlags.HiddenWindow);
             Raylib.InitWindow(1, 1, "TestContext");
             Raylib.SetTargetFPS(1);
         }
