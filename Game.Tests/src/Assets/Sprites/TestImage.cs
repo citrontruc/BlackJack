@@ -2,7 +2,6 @@
 A series of tests to evaluate if our image assets are correctly loaded.
 */
 
-#if !CI
 using Raylib_cs;
 
 public class TestImage : IDisposable
@@ -18,7 +17,7 @@ public class TestImage : IDisposable
         }
     }
 
-    [Fact]
+    [RaylibFact]
     public void LoadImageAsset_Valid_ReturnsSuccess()
     {
         // Arrange
@@ -38,7 +37,7 @@ public class TestImage : IDisposable
         Assert.True(loadSuccess.IsSuccess);
     }
 
-    [Fact]
+    [RaylibFact]
     public void LoadImageAsset_InValid_ReturnsFailure()
     {
         // Arrange
@@ -53,7 +52,7 @@ public class TestImage : IDisposable
         Assert.True(loadSuccess.IsFailure);
     }
 
-    [Fact]
+    [RaylibFact]
     public void LoadImageAsset_MultipleTimes_ReturnsFailure()
     {
         // Arrange
@@ -78,4 +77,3 @@ public class TestImage : IDisposable
         Raylib.CloseWindow();
     }
 }
-#endif
