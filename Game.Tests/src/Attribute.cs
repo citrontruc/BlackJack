@@ -1,3 +1,7 @@
+/*
+A test attribute to signal tests that should be ignored in CICD
+*/
+
 using Xunit;
 
 public class RaylibFactAttribute : FactAttribute
