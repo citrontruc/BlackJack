@@ -15,7 +15,7 @@ public static class MenuDataLoader
     /// <exception cref="FileNotFoundException"> Throws an error if the firectory specified does not exist</exception>
     public static JsonData? LoadMenuData(string dataDirectory)
     {
-        if (!Directory.Exists(dataDirectory))
+        if (!File.Exists(dataDirectory))
         {
             throw new FileNotFoundException($"Could not find the following file: {dataDirectory}");
         }

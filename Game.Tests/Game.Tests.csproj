@@ -19,5 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Game\BlackJack.csproj" />
+    <None Update="resources\*.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -2,6 +2,9 @@
 A class to put in place a global random number generator.
 */
 
+// Random is an insecure number generator.
+// We however have no sensitive information to encrypt. We can disable the warning.
+#pragma warning disable CA5394
 public static class RandomGlobal
 {
     /// <summary>
@@ -15,3 +18,4 @@ public static class RandomGlobal
         return _rnd;
     }
 }
+#pragma warning restore CA5394

@@ -13,6 +13,8 @@ public class GameHandler : Singleton<GameHandler>
     private static readonly int _targetFPS = 60;
     #endregion
 
+    private ImageHandler _imageHandler = new();
+
     #region Initialization
     public void Initiliaze()
     {
@@ -38,11 +40,16 @@ public class GameHandler : Singleton<GameHandler>
     #region Execution
     public void RunGame()
     {
+        var imageName = "Game/resources/AceHeart.jpeg";
+        Result loadSuccess = _imageHandler.LoadImage(imageName);
+        Console.WriteLine(loadSuccess.ToString());
+
         while (!Raylib.WindowShouldClose())
         {
             float dt = Raylib.GetFrameTime();
             //_inputHandler?.Update();
             //_sceneHandler?.Update(dt);
+
             Draw();
         }
         Raylib.CloseWindow();
@@ -50,7 +57,9 @@ public class GameHandler : Singleton<GameHandler>
 
     public void Draw()
     {
+        var imageName = "Game/resources/AceHeart.jpeg";
         Raylib.BeginDrawing();
+        _imageHandler.Draw(imageName, 0, 0);
         //_sceneHandler?.Draw();
         Raylib.EndDrawing();
     }

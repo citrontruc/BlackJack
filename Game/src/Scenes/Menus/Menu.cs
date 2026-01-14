@@ -12,12 +12,16 @@ public class Menu : IScene
     private int _screenHeight = Raylib.GetScreenHeight();
     #endregion
 
+    #region LoadMenu
     private string _dataDirectory;
+    private ImageHandler _imageHandler;
     private JsonData? _jsonData;
+    #endregion
 
-    public Menu(string dataDirectory)
+    public Menu(string dataDirectory, ImageHandler imageHandler)
     {
         _dataDirectory = dataDirectory;
+        _imageHandler = imageHandler;
     }
 
     public Result LoadJson(string jsonDirectory)
