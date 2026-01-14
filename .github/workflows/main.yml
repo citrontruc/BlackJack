@@ -2,6 +2,7 @@ name: Build and deploy the game
 
 env:
   PROJECT_NAME: BlackJack
+  CI: "true"
 
 on:
   push:

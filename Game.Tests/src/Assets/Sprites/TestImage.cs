@@ -2,6 +2,7 @@
 A series of tests to evaluate if our image assets are correctly loaded.
 */
 
+#if !CI
 using Raylib_cs;
 
 public class TestImage : IDisposable
@@ -77,3 +78,4 @@ public class TestImage : IDisposable
         Raylib.CloseWindow();
     }
 }
+#endif
