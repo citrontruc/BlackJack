@@ -1,3 +1,0 @@
-/*
-A class to handle all audio.
-*/

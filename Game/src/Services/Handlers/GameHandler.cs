@@ -29,6 +29,7 @@ public class GameHandler : Singleton<GameHandler>
     {
         Raylib.InitWindow(_screenWidth, _screenHeight, "BlackJack");
         Raylib.SetTargetFPS(_targetFPS);
+        Raylib.InitAudioDevice();
     }
 
     /// <summary>
@@ -52,6 +53,7 @@ public class GameHandler : Singleton<GameHandler>
 
             Draw();
         }
+        Raylib.CloseAudioDevice();
         Raylib.CloseWindow();
     }
 

@@ -1,3 +1,0 @@
-/*
-An object to store a single sound that can be shared with multiple objects.
-*/

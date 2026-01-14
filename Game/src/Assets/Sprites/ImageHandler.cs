@@ -3,10 +3,13 @@ A class to handle images.
 Check if they are already loaded.
 */
 
+using Raylib_cs;
+
 public class ImageHandler
 {
     private Dictionary<string, ImageAsset> _availableImages = new();
 
+    #region Load, Set and get
     public Result AddImageToDict(string imageName, ImageAsset imageValue)
     {
         if (_availableImages.TryGetValue(imageName, out var response))
@@ -42,6 +45,7 @@ public class ImageHandler
         ImageAsset newImageAsset = new(imageName);
         return AddImageToDict(imageName, newImageAsset);
     }
+    #endregion
 
     public void Draw(string imageName, int x, int y)
     {
@@ -49,6 +53,6 @@ public class ImageHandler
         {
             throw new Exception("Could not find the image to draw");
         }
-        response.Draw(x, y);
+        Raylib.DrawTexture(response.GetTexture(), x, y, Color.RayWhite);
     }
 }

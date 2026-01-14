@@ -10,13 +10,14 @@ public record ImageAsset : IDisposable
     private Texture2D _textureValue;
     private bool _disposed;
 
-    #region On Creation
+    #region Constructor
     public ImageAsset(string imageName)
     {
         _imageName = imageName;
         LoadImageValue();
     }
 
+    #region Load, Getters and Setters
     public void LoadImageValue()
     {
         Image imageValue = Raylib.LoadImage(_imageName);
@@ -25,7 +26,6 @@ public record ImageAsset : IDisposable
     }
     #endregion
 
-    #region Getters and Setters
     public Texture2D GetTexture()
     {
         return _textureValue;
