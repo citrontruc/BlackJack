@@ -14,14 +14,14 @@ public class Menu : IScene
 
     #region LoadMenu
     private string _dataDirectory;
-    private ImageHandler _imageHandler;
+    private TextureHandler _textureHandler;
     private JsonData? _jsonData;
     #endregion
 
-    public Menu(string dataDirectory, ImageHandler imageHandler)
+    public Menu(string dataDirectory, TextureHandler textureHandler)
     {
         _dataDirectory = dataDirectory;
-        _imageHandler = imageHandler;
+        _textureHandler = textureHandler;
     }
 
     public Result LoadJson(string jsonDirectory)

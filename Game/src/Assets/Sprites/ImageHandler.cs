@@ -5,54 +5,55 @@ Check if they are already loaded.
 
 using Raylib_cs;
 
-public class ImageHandler
+public class TextureHandler : AssetHandler<Texture2D>
 {
-    private Dictionary<string, ImageAsset> _availableImages = new();
+    private Dictionary<string, Asset<Texture2D>> _availableTextures = new();
 
     #region Load, Set and get
-    public Result AddImageToDict(string imageName, ImageAsset imageValue)
+    public Result StoreAsset(string textureName, Asset<Texture2D> textureAsset)
     {
-        if (_availableImages.TryGetValue(imageName, out var response))
+        if (_availableTextures.TryGetValue(textureName, out var response))
         {
-            return Result.Failure(new Error("400", "ImageAsset already exists"));
+            return Result.Failure(new Error("400", "textureAsset already exists"));
         }
-        _availableImages[imageName] = imageValue;
+        _availableTextures[textureName] = textureAsset;
         return Result.Success();
     }
 
-    public ImageAsset GetImage(string imageName)
+    public Asset<Texture2D> Get(string textureName)
     {
-        if (_availableImages.TryGetValue(imageName, out var response))
+        if (_availableTextures.TryGetValue(textureName, out var response))
         {
             return response;
         }
 
-        Result imageLoad = LoadImage(imageName);
-        if (imageLoad.IsSuccess)
+        Result textureLoad = LoadAsset(textureName);
+        if (textureLoad.IsSuccess)
         {
-            return _availableImages[imageName];
+            return _availableTextures[textureName];
         }
 
-        throw new FileLoadException(imageLoad.ToString());
+        throw new FileLoadException(textureLoad.ToString());
     }
 
-    public Result LoadImage(string imageName)
+    public Result LoadAsset(string textureName)
     {
-        if (!File.Exists(imageName))
+        if (!File.Exists(textureName))
         {
             return Result.Failure(new Error("404", "Image was not found"));
         }
-        ImageAsset newImageAsset = new(imageName);
-        return AddImageToDict(imageName, newImageAsset);
+        TextureAsset newTextureAsset = new();
+        newTextureAsset.Load(textureName);
+        return StoreAsset(textureName, newTextureAsset);
     }
     #endregion
 
-    public void Draw(string imageName, int x, int y)
+    public void Draw(string textureName, int x, int y)
     {
-        if (!_availableImages.TryGetValue(imageName, out var response))
+        if (!_availableTextures.TryGetValue(textureName, out var response))
         {
             throw new Exception("Could not find the image to draw");
         }
-        Raylib.DrawTexture(response.GetTexture(), x, y, Color.RayWhite);
+        Raylib.DrawTexture(response.GetAssetValue(), x, y, Color.RayWhite);
     }
 }

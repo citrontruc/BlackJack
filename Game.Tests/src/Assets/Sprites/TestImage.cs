@@ -22,7 +22,7 @@ public class TestImage : IDisposable
     {
         // Arrange
         InitilizeRaylib();
-        ImageHandler imageHandler = new();
+        TextureHandler imageHandler = new();
         var imageName = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory,
             "resources",
@@ -30,7 +30,7 @@ public class TestImage : IDisposable
         );
 
         // Act
-        Result loadSuccess = imageHandler.LoadImage(imageName);
+        Result loadSuccess = imageHandler.LoadAsset(imageName);
         Console.WriteLine(loadSuccess.ToString());
 
         // Assert
@@ -42,11 +42,11 @@ public class TestImage : IDisposable
     {
         // Arrange
         InitilizeRaylib();
-        ImageHandler imageHandler = new();
+        TextureHandler imageHandler = new();
         string imageName = "";
 
         // Act
-        Result loadSuccess = imageHandler.LoadImage(imageName);
+        Result loadSuccess = imageHandler.LoadAsset(imageName);
 
         // Assert
         Assert.True(loadSuccess.IsFailure);
@@ -57,7 +57,7 @@ public class TestImage : IDisposable
     {
         // Arrange
         InitilizeRaylib();
-        ImageHandler imageHandler = new();
+        TextureHandler imageHandler = new();
         var imageName = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory,
             "resources",
@@ -65,8 +65,8 @@ public class TestImage : IDisposable
         );
 
         // Act
-        Result loadSuccess = imageHandler.LoadImage(imageName);
-        loadSuccess = imageHandler.LoadImage(imageName);
+        Result loadSuccess = imageHandler.LoadAsset(imageName);
+        loadSuccess = imageHandler.LoadAsset(imageName);
 
         // Assert
         Assert.True(loadSuccess.IsFailure);

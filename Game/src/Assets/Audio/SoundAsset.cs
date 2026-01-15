@@ -4,27 +4,20 @@ An object to store a single sound that can be shared with multiple objects.
 
 using Raylib_cs;
 
-public class SoundAsset : IDisposable
+public class SoundAsset : Asset<Sound>
 {
-    private string _soundDirectory;
+    private string? _soundDirectory;
     private Sound _sound;
     private bool _disposed;
 
-    #region Constructor
-    public SoundAsset(string soundDirectory)
+    #region Load, get and set
+    public void Load(string soundDirectory)
     {
         _soundDirectory = soundDirectory;
-        LoadSoundValue();
-    }
-    #endregion
-
-    #region Load, get and set
-    public void LoadSoundValue()
-    {
         _sound = Raylib.LoadSound(_soundDirectory);
     }
 
-    public Sound GetSound()
+    public Sound GetAssetValue()
     {
         return _sound;
     }
