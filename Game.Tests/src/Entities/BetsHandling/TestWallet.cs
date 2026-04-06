@@ -2,6 +2,11 @@
 A class to write tests about wallets.
 */
 
+using BlackJack.Entities.BetsHandling;
+using BlackJack.Utils.Errors;
+
+namespace Game.Tests.Entities.BetsHandling;
+
 public class WalletTest
 {
     [Fact]

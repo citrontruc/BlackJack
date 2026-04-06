@@ -2,7 +2,11 @@
 A series of tests to evaluate if our image assets are correctly loaded.
 */
 
+using BlackJack.Assets.Sprites;
+using BlackJack.Utils.Errors;
 using Raylib_cs;
+
+namespace Game.Tests.Assets.Sprites;
 
 public class TestImage : IDisposable
 {

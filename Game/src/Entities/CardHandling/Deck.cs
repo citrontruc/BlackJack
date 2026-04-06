@@ -2,6 +2,8 @@
 A deck to handle all our cards and how they are distributed to players.
 */
 
+namespace BlackJack.Entities.CardHandling;
+
 public class Deck
 {
     private Queue<Card> _cards = [];

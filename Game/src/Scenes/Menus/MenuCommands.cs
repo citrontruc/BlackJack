@@ -2,7 +2,7 @@
 A class to define enums in order to describe commands that can be done in a menu.
 */
 
-namespace MenuData;
+namespace BlackJack.Scenes.Menus;
 
 enum Commands
 {

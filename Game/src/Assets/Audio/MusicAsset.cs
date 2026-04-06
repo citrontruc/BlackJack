@@ -4,7 +4,9 @@ An object to store a single sound that can be shared with multiple objects.
 
 using Raylib_cs;
 
-public class MusicAsset : Asset<Music>
+namespace BlackJack.Assets.Audio;
+
+public class MusicAsset : IAsset<Music>
 {
     private string? _musicDirectory;
     private Music _music;

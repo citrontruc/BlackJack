@@ -2,6 +2,9 @@
 A class to launch our game
 */
 
+using BlackJack.Scenes.Menus;
+using BlackJack.Services.Handlers;
+
 public class Game
 {
     public static void Main()

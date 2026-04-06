@@ -2,6 +2,10 @@
 Errors that can arise with the wallet component.
 */
 
+using BlackJack.Utils.Errors;
+
+namespace BlackJack.Entities.BetsHandling;
+
 public static class WalletErrors
 {
     public static readonly Error NotEnoughMoney = new(

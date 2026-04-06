@@ -2,7 +2,9 @@
 A strategy to evaluate a hand of blackjack.
 */
 
-public class BlackJackEvaluationStrategy : HandEvaluationStrategy
+namespace BlackJack.Entities.CardHandling.HandEvaluationStrategy;
+
+public class BlackJackEvaluationStrategy : IHandEvaluationStrategy
 {
     private readonly Dictionary<Card.Values, int[]> _cardValues = new()
     {

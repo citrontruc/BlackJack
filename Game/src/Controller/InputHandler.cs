@@ -2,7 +2,7 @@
 A class to retrieve all the inputs from all sources.
 */
 
-using PlayerInputs;
+namespace BlackJack.Controller;
 
 public class InputHandler
 {

@@ -1,5 +1,7 @@
 /* An object to help handle elements that evolve with time. */
 
+namespace BlackJack.Utils;
+
 public class Timer
 {
     /// <summary>

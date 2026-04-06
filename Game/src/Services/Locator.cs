@@ -4,6 +4,10 @@ The service locator is unique, it is a Singleton to make sure of its unicity and
 It is then used to do dependency injection.
 */
 
+using BlackJack.Utils;
+
+namespace BlackJack.Services;
+
 public class ServiceLocator : Singleton<ServiceLocator>
 {
     private Dictionary<Type, object> _services = new Dictionary<Type, object>();

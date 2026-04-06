@@ -3,7 +3,8 @@ A class to load a Menu JSON using the Menudata objects
 */
 
 using System.Text.Json;
-using MenuData;
+
+namespace BlackJack.Scenes.Menus;
 
 public static class MenuDataLoader
 {

@@ -5,6 +5,8 @@ A class to put in place a global random number generator.
 // Random is an insecure number generator.
 // We however have no sensitive information to encrypt. We can disable the warning.
 #pragma warning disable CA5394
+namespace BlackJack.Utils;
+
 public static class RandomGlobal
 {
     /// <summary>

@@ -2,14 +2,17 @@
 A class to handle musics.
 */
 
+using BlackJack.Utils.Errors;
 using Raylib_cs;
 
-public class MusicHandler : AssetHandler<Music>
+namespace BlackJack.Assets.Audio;
+
+public class MusicHandler : IAssetHandler<Music>
 {
-    private Dictionary<string, Asset<Music>> _availableMusic = new();
+    private readonly Dictionary<string, IAsset<Music>> _availableMusic = new();
 
     #region Load, Set and get
-    public Result StoreAsset(string musicName, Asset<Music> musicValue)
+    public Result StoreAsset(string musicName, IAsset<Music> musicValue)
     {
         if (_availableMusic.TryGetValue(musicName, out var response))
         {
@@ -19,7 +22,7 @@ public class MusicHandler : AssetHandler<Music>
         return Result.Success();
     }
 
-    public Asset<Music> Get(string musicName)
+    public IAsset<Music> Get(string musicName)
     {
         if (_availableMusic.TryGetValue(musicName, out var response))
         {

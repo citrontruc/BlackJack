@@ -2,12 +2,14 @@
 A players hand in the game of BlackJack
 */
 
+namespace BlackJack.Entities.CardHandling;
+
 public class Hand
 {
     private List<Card> _cards = [];
-    private HandEvaluationStrategy _evaluationStrategy;
+    private readonly HandEvaluationStrategy.IHandEvaluationStrategy _evaluationStrategy;
 
-    public Hand(HandEvaluationStrategy strategy)
+    public Hand(HandEvaluationStrategy.IHandEvaluationStrategy strategy)
     {
         _evaluationStrategy = strategy;
     }

@@ -2,14 +2,17 @@
 A class to handle sound effects.
 */
 
+using BlackJack.Utils.Errors;
 using Raylib_cs;
 
-public class SoundHandler : AssetHandler<Sound>
+namespace BlackJack.Assets.Audio;
+
+public class SoundHandler : IAssetHandler<Sound>
 {
-    private Dictionary<string, Asset<Sound>> _availableSounds = new();
+    private readonly Dictionary<string, IAsset<Sound>> _availableSounds = new();
 
     #region Load, Set and get
-    public Result StoreAsset(string soundName, Asset<Sound> soundValue)
+    public Result StoreAsset(string soundName, IAsset<Sound> soundValue)
     {
         if (_availableSounds.TryGetValue(soundName, out var response))
         {
@@ -19,7 +22,7 @@ public class SoundHandler : AssetHandler<Sound>
         return Result.Success();
     }
 
-    public Asset<Sound> Get(string soundName)
+    public IAsset<Sound> Get(string soundName)
     {
         if (_availableSounds.TryGetValue(soundName, out var response))
         {

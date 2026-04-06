@@ -2,7 +2,11 @@
 A wallet to represent a player's current money count.
 */
 
-public record class Wallet
+using BlackJack.Utils.Errors;
+
+namespace BlackJack.Entities.BetsHandling;
+
+public record Wallet
 {
     public int MoneySum;
 

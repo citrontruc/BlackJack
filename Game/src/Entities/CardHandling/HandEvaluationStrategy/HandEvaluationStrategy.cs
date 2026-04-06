@@ -2,7 +2,9 @@
 An interface to evaluate the value of a hand in a card game.
 */
 
-public interface HandEvaluationStrategy
+namespace BlackJack.Entities.CardHandling.HandEvaluationStrategy;
+
+public interface IHandEvaluationStrategy
 {
     public int Evaluate(List<Card> cards);
 }

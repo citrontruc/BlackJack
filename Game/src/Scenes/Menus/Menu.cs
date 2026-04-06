@@ -2,8 +2,11 @@
 A class to represent the main menu of the game.
 */
 
-using MenuData;
+using BlackJack.Assets.Sprites;
+using BlackJack.Utils.Errors;
 using Raylib_cs;
+
+namespace BlackJack.Scenes.Menus;
 
 public class Menu : IScene
 {

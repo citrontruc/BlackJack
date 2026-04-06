@@ -2,6 +2,13 @@
 A test class to evaluate the strategies of the casino.
 */
 
+using BlackJack.Entities.CardHandling;
+using BlackJack.Entities.CardHandling.HandEvaluationStrategy;
+using BlackJack.Entities.Players.CasinoStrategy;
+using BlackJack.Entities.Players.Players;
+
+namespace Game.Tests.Entities.Player;
+
 public class CasinoPlayerStrategyEvaluation
 {
     [Fact]
@@ -11,11 +18,11 @@ public class CasinoPlayerStrategyEvaluation
         BlackJackEvaluationStrategy handEvaluationStrategy = new();
         DefaultStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
-        Card AceCard = new(Card.Values.Ace, Card.Colours.Heart);
+        Card aceCard = new(Card.Values.Ace, Card.Colours.Heart);
         Card sixCard = new(Card.Values.Six, Card.Colours.Heart);
 
         // Act
-        player.AddCardToHand(AceCard);
+        player.AddCardToHand(aceCard);
         player.AddCardToHand(sixCard);
 
         // Assert
@@ -48,11 +55,11 @@ public class CasinoPlayerStrategyEvaluation
         DefaultStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
         Card jackCard = new(Card.Values.Jack, Card.Colours.Heart);
-        Card QueenCard = new(Card.Values.Queen, Card.Colours.Heart);
+        Card queenCard = new(Card.Values.Queen, Card.Colours.Heart);
 
         // Act
         player.AddCardToHand(jackCard);
-        player.AddCardToHand(QueenCard);
+        player.AddCardToHand(queenCard);
 
         // Assert
         Assert.Equal(PlayerActions.Actions.Stand, player.EvaluateNextAction());
@@ -66,11 +73,11 @@ public class CasinoPlayerStrategyEvaluation
         SoftSeventeenStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
         Card jackCard = new(Card.Values.Jack, Card.Colours.Heart);
-        Card QueenCard = new(Card.Values.Queen, Card.Colours.Heart);
+        Card queenCard = new(Card.Values.Queen, Card.Colours.Heart);
 
         // Act
         player.AddCardToHand(jackCard);
-        player.AddCardToHand(QueenCard);
+        player.AddCardToHand(queenCard);
 
         // Assert
         Assert.Equal(PlayerActions.Actions.Stand, player.EvaluateNextAction());
@@ -83,11 +90,11 @@ public class CasinoPlayerStrategyEvaluation
         BlackJackEvaluationStrategy handEvaluationStrategy = new();
         SoftSeventeenStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
-        Card AceCard = new(Card.Values.Ace, Card.Colours.Heart);
+        Card aceCard = new(Card.Values.Ace, Card.Colours.Heart);
         Card sixCard = new(Card.Values.Six, Card.Colours.Heart);
 
         // Act
-        player.AddCardToHand(AceCard);
+        player.AddCardToHand(aceCard);
         player.AddCardToHand(sixCard);
 
         // Assert
@@ -101,11 +108,11 @@ public class CasinoPlayerStrategyEvaluation
         BlackJackEvaluationStrategy handEvaluationStrategy = new();
         SoftSeventeenStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
-        Card TenCard = new(Card.Values.Ten, Card.Colours.Heart);
+        Card tenCard = new(Card.Values.Ten, Card.Colours.Heart);
         Card sevenCard = new(Card.Values.Seven, Card.Colours.Heart);
 
         // Act
-        player.AddCardToHand(TenCard);
+        player.AddCardToHand(tenCard);
         player.AddCardToHand(sevenCard);
 
         // Assert
@@ -119,16 +126,16 @@ public class CasinoPlayerStrategyEvaluation
         BlackJackEvaluationStrategy handEvaluationStrategy = new();
         SoftSeventeenStrategy casinoStrategy = new();
         CasinoPlayer player = new(handEvaluationStrategy, casinoStrategy);
-        Card AceHeartCard = new(Card.Values.Ace, Card.Colours.Heart);
-        Card TwoCard = new(Card.Values.Two, Card.Colours.Heart);
-        Card ThreeCard = new(Card.Values.Three, Card.Colours.Heart);
-        Card AceSpadesCard = new(Card.Values.Ace, Card.Colours.Spades);
+        Card aceHeartCard = new(Card.Values.Ace, Card.Colours.Heart);
+        Card twoCard = new(Card.Values.Two, Card.Colours.Heart);
+        Card threeCard = new(Card.Values.Three, Card.Colours.Heart);
+        Card aceSpadesCard = new(Card.Values.Ace, Card.Colours.Spades);
 
         // Act
-        player.AddCardToHand(AceHeartCard);
-        player.AddCardToHand(TwoCard);
-        player.AddCardToHand(ThreeCard);
-        player.AddCardToHand(AceSpadesCard);
+        player.AddCardToHand(aceHeartCard);
+        player.AddCardToHand(twoCard);
+        player.AddCardToHand(threeCard);
+        player.AddCardToHand(aceSpadesCard);
 
         // Assert
         Assert.Equal(PlayerActions.Actions.Hit, player.EvaluateNextAction());

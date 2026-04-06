@@ -2,13 +2,18 @@
 A class to define the Casino's behaviour.
 */
 
+using BlackJack.Entities.CardHandling.HandEvaluationStrategy;
+using BlackJack.Entities.Players.CasinoStrategy;
+
+namespace BlackJack.Entities.Players.Players;
+
 public class CasinoPlayer : AbstractPlayer
 {
-    private CasinoStrategy _casinoStrategy;
+    private readonly ICasinoStrategy _casinoStrategy;
 
     public CasinoPlayer(
-        HandEvaluationStrategy handEvaluationstrategy,
-        CasinoStrategy casinoStrategy
+        IHandEvaluationStrategy handEvaluationstrategy,
+        ICasinoStrategy casinoStrategy
     )
         : base(handEvaluationstrategy)
     {
@@ -17,6 +22,6 @@ public class CasinoPlayer : AbstractPlayer
 
     public PlayerActions.Actions EvaluateNextAction()
     {
-        return _casinoStrategy.EvaluateNextAction(_playerHand);
+        return _casinoStrategy.EvaluateNextAction(PlayerHand);
     }
 }

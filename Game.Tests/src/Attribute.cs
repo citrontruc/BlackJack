@@ -2,7 +2,7 @@
 A test attribute to signal tests that should be ignored in CICD
 */
 
-using Xunit;
+namespace Game.Tests;
 
 public class RaylibFactAttribute : FactAttribute
 {

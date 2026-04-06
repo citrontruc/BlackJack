@@ -2,6 +2,8 @@
 A representation of a card in a game of BlackJack.
 */
 
+namespace BlackJack.Entities.CardHandling;
+
 public struct Card
 {
     #region Enums to define cards

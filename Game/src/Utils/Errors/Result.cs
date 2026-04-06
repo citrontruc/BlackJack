@@ -2,7 +2,9 @@
 A class to implement the Result design pattern.
 */
 
-public record class Result
+namespace BlackJack.Utils.Errors;
+
+public record Result
 {
     private Result(bool isSuccess, Error error)
     {

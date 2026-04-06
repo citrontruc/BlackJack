@@ -2,6 +2,10 @@
 A class to handle transitions between scenes and notably that assets are loaded and unloaded.
 */
 
+using BlackJack.Utils.Errors;
+
+namespace BlackJack.Scenes;
+
 public class SceneHandler
 {
     private IScene? _currentScene;

@@ -4,7 +4,9 @@ An object to store a single image that can be shared with multiple objects.
 
 using Raylib_cs;
 
-public record TextureAsset : Asset<Texture2D>
+namespace BlackJack.Assets.Sprites;
+
+public record TextureAsset : IAsset<Texture2D>
 {
     private string? _textureName;
     private Texture2D _textureValue;

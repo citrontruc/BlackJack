@@ -3,14 +3,17 @@ A class to handle images.
 Check if they are already loaded.
 */
 
+using BlackJack.Utils.Errors;
 using Raylib_cs;
 
-public class TextureHandler : AssetHandler<Texture2D>
+namespace BlackJack.Assets.Sprites;
+
+public class TextureHandler : IAssetHandler<Texture2D>
 {
-    private Dictionary<string, Asset<Texture2D>> _availableTextures = new();
+    private Dictionary<string, IAsset<Texture2D>> _availableTextures = new();
 
     #region Load, Set and get
-    public Result StoreAsset(string textureName, Asset<Texture2D> textureAsset)
+    public Result StoreAsset(string textureName, IAsset<Texture2D> textureAsset)
     {
         if (_availableTextures.TryGetValue(textureName, out var response))
         {
@@ -20,7 +23,7 @@ public class TextureHandler : AssetHandler<Texture2D>
         return Result.Success();
     }
 
-    public Asset<Texture2D> Get(string textureName)
+    public IAsset<Texture2D> Get(string textureName)
     {
         if (_availableTextures.TryGetValue(textureName, out var response))
         {

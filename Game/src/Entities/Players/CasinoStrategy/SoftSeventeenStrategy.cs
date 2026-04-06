@@ -3,7 +3,10 @@ An optimized strategy that takes into account the fact that you should hit on a 
 containing a 6 + an Ace.
 */
 
-public class SoftSeventeenStrategy : CasinoStrategy
+using BlackJack.Entities.CardHandling;
+namespace BlackJack.Entities.Players.CasinoStrategy;
+
+public class SoftSeventeenStrategy : ICasinoStrategy
 {
     public PlayerActions.Actions EvaluateNextAction(Hand hand)
     {

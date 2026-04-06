@@ -2,6 +2,11 @@
 A test file to check the evaluation of hands.
 */
 
+using BlackJack.Entities.CardHandling;
+using BlackJack.Entities.CardHandling.HandEvaluationStrategy;
+
+namespace Game.Tests.Entities.CardHandling;
+
 public class HandEvaluationTest
 {
     [Fact]

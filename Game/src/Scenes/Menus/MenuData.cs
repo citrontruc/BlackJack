@@ -3,15 +3,15 @@ A class to define the elements in a menu.
 Used to read and parse json elements.
 */
 
-namespace MenuData;
+namespace BlackJack.Scenes.Menus;
 
-public record class JsonData
+public record JsonData
 {
     public List<AssetData>? Assets { get; init; }
     public List<TextData>? Text { get; init; }
 }
 
-public record class AssetData
+public record AssetData
 {
     public required string Name { get; init; }
     public required ElementPosition Position { get; init; }
@@ -19,7 +19,7 @@ public record class AssetData
     public int Angle { get; init; }
 }
 
-public record class TextData
+public record TextData
 {
     public required string Value { get; init; }
     public required ElementPosition Position { get; init; }
@@ -30,25 +30,25 @@ public record class TextData
     public OnHoverAction? onHover { get; init; }
 }
 
-public record class ElementPosition
+public record ElementPosition
 {
     public int x { get; init; }
     public int y { get; init; }
 }
 
-public record class ElementSize
+public record ElementSize
 {
     public int x { get; init; }
     public int y { get; init; }
 }
 
-public record class OnClickAction
+public record OnClickAction
 {
     public required string Name { get; init; }
     public required string Value { get; init; }
 }
 
-public record class OnHoverAction
+public record OnHoverAction
 {
     public required string Name { get; init; }
     public required string Value { get; init; }

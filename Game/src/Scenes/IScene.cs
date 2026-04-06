@@ -2,6 +2,10 @@
 An interface to define Scenes for menus and levels.
 */
 
+using BlackJack.Utils.Errors;
+
+namespace BlackJack.Scenes;
+
 public interface IScene
 {
     /// <summary>

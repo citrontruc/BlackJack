@@ -2,6 +2,8 @@
 A singleton class to make sure some components are unique.
 */
 
+namespace BlackJack.Utils;
+
 public abstract class Singleton<T>
     where T : class, new()
 {

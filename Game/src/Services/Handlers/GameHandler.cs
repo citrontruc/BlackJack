@@ -3,7 +3,12 @@ A class to handle the whole game.
 Unique, launches the game.
 */
 
+using BlackJack.Assets.Sprites;
+using BlackJack.Utils;
+using BlackJack.Utils.Errors;
 using Raylib_cs;
+
+namespace BlackJack.Services.Handlers;
 
 public class GameHandler : Singleton<GameHandler>
 {

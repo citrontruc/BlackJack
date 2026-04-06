@@ -4,6 +4,8 @@ A wrapper to retrieve all of the player gamepad inputs.
 
 using Raylib_cs;
 
+namespace BlackJack.Controller.Wrappers;
+
 public static class GamepadInputHandler
 {
     public enum Button

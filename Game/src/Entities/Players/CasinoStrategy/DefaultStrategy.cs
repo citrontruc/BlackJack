@@ -3,7 +3,10 @@ A strategy that implements the casino design pattern.
 Default strategy;
 */
 
-public class DefaultStrategy : CasinoStrategy
+using BlackJack.Entities.CardHandling;
+namespace BlackJack.Entities.Players.CasinoStrategy;
+
+public class DefaultStrategy : ICasinoStrategy
 {
     public PlayerActions.Actions EvaluateNextAction(Hand hand)
     {
