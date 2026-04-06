@@ -4,6 +4,7 @@ containing a 6 + an Ace.
 */
 
 using BlackJack.Entities.CardHandling;
+
 namespace BlackJack.Entities.Players.CasinoStrategy;
 
 public class SoftSeventeenStrategy : ICasinoStrategy

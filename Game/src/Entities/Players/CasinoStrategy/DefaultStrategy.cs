@@ -4,6 +4,7 @@ Default strategy;
 */
 
 using BlackJack.Entities.CardHandling;
+
 namespace BlackJack.Entities.Players.CasinoStrategy;
 
 public class DefaultStrategy : ICasinoStrategy
