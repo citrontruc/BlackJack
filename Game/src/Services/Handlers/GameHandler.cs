@@ -4,6 +4,8 @@ Unique, launches the game.
 */
 
 using BlackJack.Assets.Sprites;
+using BlackJack.Scenes;
+using BlackJack.Scenes.Menus;
 using BlackJack.Utils;
 using BlackJack.Utils.Errors;
 using Raylib_cs;
@@ -18,7 +20,12 @@ public class GameHandler : Singleton<GameHandler>
     private static readonly int _targetFPS = 60;
     #endregion
 
-    private TextureHandler _textureHandler = new();
+    #region Services
+
+    private SceneHandler _sceneHandler;
+    private TextureHandler _textureHandler;
+    #endregion
+
 
     #region Initialization
     public void Initiliaze()
@@ -40,34 +47,40 @@ public class GameHandler : Singleton<GameHandler>
     /// <summary>
     /// Creates all the game services.
     /// </summary>
-    private static void InitiliazeServices() { }
+    private void InitiliazeServices()
+    {
+        _textureHandler = new();
+        _sceneHandler = new(new MainMenu(_textureHandler));
+    }
     #endregion
 
     #region Execution
     public void RunGame()
     {
-        var imageName = "Game/resources/AceHeart.jpeg";
-        Result loadSuccess = _textureHandler.LoadAsset(imageName);
-        Console.WriteLine(loadSuccess.ToString());
-
         while (!Raylib.WindowShouldClose())
         {
             float dt = Raylib.GetFrameTime();
-            //_inputHandler?.Update();
-            //_sceneHandler?.Update(dt);
-
+            Update(dt);
             Draw();
         }
         Raylib.CloseAudioDevice();
         Raylib.CloseWindow();
     }
+    #endregion
 
+    #region Update
+    public void Update(float deltaTime)
+    {
+        //_inputHandler?.Update();
+        _sceneHandler.UpdateScene(deltaTime);
+    }
+    #endregion
+
+    #region draw
     public void Draw()
     {
-        var imageName = "Game/resources/AceHeart.jpeg";
         Raylib.BeginDrawing();
-        _textureHandler.Draw(imageName, 0, 0);
-        //_sceneHandler?.Draw();
+        _sceneHandler.DrawScene();
         Raylib.EndDrawing();
     }
     #endregion

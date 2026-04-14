@@ -18,11 +18,14 @@ public interface IScene
     /// </summary>
     public Result Unload();
 
+    public bool ShouldChangeScene();
+    public Result TryGetNextScene(out IScene scene);
+
     /// <summary>
     /// Update all the entities in the scene.
     /// </summary>
-    /// <param name="DeltaTime">Time between frames</param>
-    public void Update(float DeltaTime);
+    /// <param name="deltaTime">Time between frames</param>
+    public void Update(float deltaTime);
 
     /// <summary>
     /// Draw all the elements in the scene.

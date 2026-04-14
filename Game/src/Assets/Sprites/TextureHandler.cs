@@ -35,7 +35,6 @@ public class TextureHandler : IAssetHandler<Texture2D>
         {
             return _availableTextures[textureName];
         }
-
         throw new FileLoadException(textureLoad.ToString());
     }
 

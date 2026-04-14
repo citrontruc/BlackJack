@@ -35,7 +35,6 @@ public class TestImage : IDisposable
 
         // Act
         Result loadSuccess = imageHandler.LoadAsset(imageName);
-        Console.WriteLine(loadSuccess.ToString());
 
         // Assert
         Assert.True(loadSuccess.IsSuccess);
@@ -69,8 +68,8 @@ public class TestImage : IDisposable
         );
 
         // Act
+        Result _ = imageHandler.LoadAsset(imageName);
         Result loadSuccess = imageHandler.LoadAsset(imageName);
-        loadSuccess = imageHandler.LoadAsset(imageName);
 
         // Assert
         Assert.True(loadSuccess.IsFailure);

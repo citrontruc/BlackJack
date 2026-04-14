@@ -23,7 +23,6 @@ public static class MenuDataLoader
         string jsonString = File.ReadAllText(dataDirectory);
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         JsonData? data = JsonSerializer.Deserialize<JsonData>(jsonString, options);
-
         return data;
     }
 }

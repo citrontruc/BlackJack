@@ -8,16 +8,23 @@ namespace BlackJack.Scenes;
 
 public class SceneHandler
 {
-    private IScene? _currentScene;
+    private IScene _currentScene;
+
+    public SceneHandler(IScene initialScene)
+    {
+        _currentScene = initialScene;
+        _currentScene.Load();
+    }
 
     public Result ChangeScene(IScene newScene)
     {
-        Result? unloadSuccessful = _currentScene?.Unload();
-        if (unloadSuccessful?.IsSuccess == false)
+        Result unloadSuccessful = _currentScene.Unload();
+        if (unloadSuccessful.IsSuccess == false)
         {
             Error unloadFailed = new("500", "Unloading of scene failed");
             return Result.Failure(unloadFailed);
         }
+
         Result loadSuccessful = newScene.Load();
         if (!loadSuccessful.IsSuccess)
         {
@@ -28,13 +35,22 @@ public class SceneHandler
         return Result.Success();
     }
 
-    public void UpdateScene(float DeltaTime)
+    public void UpdateScene(float deltaTime)
     {
-        _currentScene?.Update(DeltaTime);
+        if (_currentScene.ShouldChangeScene())
+        {
+            var result = _currentScene.TryGetNextScene(out var newScene);
+            if (result.IsFailure)
+                throw new Exception(
+                    $"{result.Error.Code} with message {result.Error.Description}."
+                );
+            ChangeScene(newScene);
+        }
+        _currentScene.Update(deltaTime);
     }
 
     public void DrawScene()
     {
-        _currentScene?.Draw();
+        _currentScene.Draw();
     }
 }

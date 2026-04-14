@@ -8,26 +8,27 @@ using Raylib_cs;
 
 namespace BlackJack.Scenes.Menus;
 
-public class Menu : IScene
+public abstract class Menu : IScene
 {
     #region Display information
-    private int _screenWidth = Raylib.GetScreenWidth();
-    private int _screenHeight = Raylib.GetScreenHeight();
+    protected readonly int _screenWidth = Raylib.GetScreenWidth();
+    protected readonly int _screenHeight = Raylib.GetScreenHeight();
     #endregion
 
     #region LoadMenu
-    private string _dataDirectory;
-    private TextureHandler _textureHandler;
-    private JsonData? _jsonData;
+    protected string _dataDirectory;
+    protected TextureHandler _textureHandler;
+    protected JsonData? _jsonData;
     #endregion
 
-    public Menu(string dataDirectory, TextureHandler textureHandler)
+    protected bool _shouldChangeScene = false;
+
+    public Menu(TextureHandler textureHandler)
     {
-        _dataDirectory = dataDirectory;
         _textureHandler = textureHandler;
     }
 
-    public Result LoadJson(string jsonDirectory)
+    Result LoadJson(string jsonDirectory)
     {
         _jsonData = MenuDataLoader.LoadMenuData(jsonDirectory);
         return Result.Success();
@@ -43,7 +44,18 @@ public class Menu : IScene
         return Result.Success();
     }
 
-    public void Update(float deltaTime) { }
+    public abstract void Update(float deltaTime);
 
-    public void Draw() { }
+    public abstract void Draw();
+
+    public bool ShouldChangeScene()
+    {
+        return _shouldChangeScene;
+    }
+
+    public Result TryGetNextScene(out IScene scene)
+    {
+        scene = null;
+        return Result.Failure(new Error("500", "Not implemented yet"));
+    }
 }
