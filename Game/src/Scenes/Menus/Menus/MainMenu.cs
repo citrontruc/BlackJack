@@ -15,7 +15,7 @@ public class MainMenu : Menu
         var result = Load();
         if (result.IsFailure)
             throw new Exception($"{result.Error.Code}: {result.Error.Description}.");
-        Console.WriteLine(_jsonData?.ToString());
+        Console.WriteLine(_jsonData);
     }
 
     public override void Draw()

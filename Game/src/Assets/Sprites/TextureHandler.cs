@@ -10,12 +10,12 @@ namespace BlackJack.Assets.Sprites;
 
 public class TextureHandler : IAssetHandler<Texture2D>
 {
-    private Dictionary<string, IAsset<Texture2D>> _availableTextures = new();
+    private readonly Dictionary<string, IAsset<Texture2D>> _availableTextures = new();
 
     #region Load, Set and get
     public Result StoreAsset(string textureName, IAsset<Texture2D> textureAsset)
     {
-        if (_availableTextures.TryGetValue(textureName, out var response))
+        if (_availableTextures.TryGetValue(textureName, out var _))
         {
             return Result.Failure(new Error("400", "textureAsset already exists"));
         }
@@ -47,6 +47,11 @@ public class TextureHandler : IAssetHandler<Texture2D>
         TextureAsset newTextureAsset = new();
         newTextureAsset.Load(textureName);
         return StoreAsset(textureName, newTextureAsset);
+    }
+
+    public bool UnLoadOneAsset(string textureName)
+    {
+        return _availableTextures.Remove(textureName);
     }
     #endregion
 

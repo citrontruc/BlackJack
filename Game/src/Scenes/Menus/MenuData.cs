@@ -9,6 +9,7 @@ public record JsonData
 {
     public List<AssetData>? Assets { get; init; }
     public List<TextData>? Text { get; init; }
+    public string NextScene { get; init; }
 }
 
 public record AssetData

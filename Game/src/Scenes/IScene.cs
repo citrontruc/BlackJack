@@ -18,6 +18,8 @@ public interface IScene
     /// </summary>
     public Result Unload();
 
+    public List<string> GetAllAssetKeys();
+
     public bool ShouldChangeScene();
     public Result TryGetNextScene(out IScene scene);
 

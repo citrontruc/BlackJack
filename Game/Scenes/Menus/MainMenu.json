@@ -61,5 +61,6 @@
                 "Value": "0"
             }
         }
-    ]
+    ],
+    "NextScene": "Test"
 }

@@ -19,6 +19,7 @@ public abstract class Menu : IScene
     protected string _dataDirectory;
     protected TextureHandler _textureHandler;
     protected JsonData? _jsonData;
+    protected List<string> ListAllAssetKeys;
     #endregion
 
     protected bool _shouldChangeScene = false;
@@ -31,6 +32,10 @@ public abstract class Menu : IScene
     Result LoadJson(string jsonDirectory)
     {
         _jsonData = MenuDataLoader.LoadMenuData(jsonDirectory);
+        if (_jsonData == null)
+        {
+            return Result.Failure(new Error("500", "failed to load json menu file."));
+        }
         return Result.Success();
     }
 
@@ -41,6 +46,7 @@ public abstract class Menu : IScene
 
     public Result Unload()
     {
+        // Do unloading by telling the texture handler that the values can be removed.
         return Result.Success();
     }
 
@@ -57,5 +63,10 @@ public abstract class Menu : IScene
     {
         scene = null;
         return Result.Failure(new Error("500", "Not implemented yet"));
+    }
+
+    public List<string> GetAllAssetKeys()
+    {
+        return ListAllAssetKeys;
     }
 }
